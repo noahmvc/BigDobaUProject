@@ -1,0 +1,32 @@
+﻿@model List<Music>
+
+<h1>Music Collection</h1>
+
+<form method="get" action="@Url.Action("Index", "Music")">
+    <div class="form-group">
+        <label for="search">Search by Title or Artist:</label>
+        <input type="text" class="form-control" id="search" name="search" placeholder="Enter title or artist">
+        <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            
+            <th>Artist</th>
+            <th>Title</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+               
+                <td>@item.Artist</td>
+                <td>@item.Title</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
